@@ -1,6 +1,7 @@
 
 function getFirstSelector(selector) {
-  return selector[0];
+  var s = document.querySelector(selector)
+  return s;
 }
 
 function nestedTarget() {
@@ -9,9 +10,14 @@ function nestedTarget() {
 }
 
 function increaseRankBy(n) {
-  n = document.getElementById("main").querySelectorAll("ranked-list");
+  n = document.getElementById("app").querySelectorAll(".ranked-list li");
   for (let i = 0; i < n.length; i++) {
-    n[i].innerHTML = (i + 1).parseInt();
+    n[i].innerHTML = (n[i] + 1).parseInt();
   }
   return n;
+}
+
+function deepestChild() {
+  var nested = document.getElementById("grand-node").getElementsByTagName("div")[3];
+  return nested;
 }
